@@ -1,0 +1,56 @@
+@page "/characters"
+@inject HttpClient httpClient
+@using System.Net.Http
+<style>
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    }
+
+    .card {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    }
+
+</style>
+<h3 class="justify-content-center text-center"> <strong>Personajes</strong> </h3>
+
+<div class="card-container" >
+@foreach (var character in data)
+{
+    <div class="card" style="width: 18rem;">
+        <div class="card-header" style="background-color: rgba(0, 255, 115, 0.452);">
+                <strong>Personaje</strong> 
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre: @character.Name </li>
+            <li class="list-group-item">Estado:  @character.Status</li>
+            <li class="list-group-item">Especie: @character.Species</li>
+        </ul>
+    </div>
+}
+</div>
+
+@code {
+    private List<CharacterDTO> data {get;set;}
+
+    protected override async Task OnInitializedAsync()
+    {
+            var response = await httpClient.GetAsync("https://rickandmortyapi.com/api/character");
+            response.EnsureSuccessStatusCode();
+            var result = await response.Content.ReadFromJsonAsync<Respuesta>();
+            data = result.Results;      
+    }
+    public class Respuesta
+    {
+        public List<CharacterDTO> Results { get; set; }
+    }
+
+    public class CharacterDTO
+    {
+        public string Name { get; set; }
+        public string Status { get; set; }
+        public string Species { get; set; }
+    }
+}

@@ -1,0 +1,48 @@
+@page "/character/{id}/details"
+@inject HttpClient httpClient
+
+<style>
+    .card{
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+</style>
+
+<div class="card text-white bg-secondary mb-3 " style="max-width: 18rem;">
+  <div class="card-header" style="color: aquamarine;"> <h2 class="justify-content-center text-center">PERSONAJE</h2> </div>
+   <img class="card-img-top" src="@data.image" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Nombre</h5>
+    <p class="card-text">@data.Name</p>
+    <h5 class="card-title">Estado</h5>
+    <p class="card-text">@data.Status</p>
+    <h5 class="card-title">Genero</h5>
+    <p class="card-text">@data.gender</p>
+  </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+    private CharacterDTO data;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        var httpClient = new HttpClient();
+        data = await httpClient.GetFromJsonAsync<CharacterDTO>($"https://rickandmortyapi.com/api/character/{Id}");
+        
+    }
+
+    public class CharacterDTO
+    {
+        public string Name { get; set; }
+        public string Status { get; set; }
+        public string gender {get;set;}
+        public string image { get; set; }
+
+    }
+}

@@ -1,0 +1,49 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = RickandMorty
+build_property.RootNamespace = RickandMorty
+build_property.ProjectDir = C:\Users\cmsyo\Desktop\EntregableFinal\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\cmsyo\Desktop\EntregableFinal
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Pages/Componente_nombre.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50ZV9ub21icmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Pages/PageCharacter.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUNoYXJhY3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Pages/PageCharacterDetail.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUNoYXJhY3RlckRldGFpbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Pages/PageContact.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZUNvbnRhY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Pages/PageWelcome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnZVdlbGNvbWUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/cmsyo/Desktop/EntregableFinal/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

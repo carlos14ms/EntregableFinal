@@ -1,0 +1,84 @@
+@page "/contacto"
+
+<style>
+  .custom-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .custom-input {
+    width: 100%;
+  }
+
+  .custom-textarea {
+    height: 150px; 
+  }
+
+  .parrafo {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+</style>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form @onsubmit="Prueba" >
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"> <strong>Nombre</strong> </label>
+          <input @bind="Nombre" type="text" class="form-control form-control-sm">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"> <strong> Correo Electrónico</strong> </label>
+          <input @bind="Correo" type="email" class="form-control form-control-sm">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"><strong>Número de Teléfono</strong></label>
+          <input @bind="Telefono" type="text" class="form-control form-control-sm">
+        </div>
+
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text"> <strong>Mensaje</strong> </span>
+          </div>
+          <textarea @bind="Mensaje" class="form-control custom-textarea" aria-label="With textarea"></textarea>
+        </div>
+
+        <button class="btn btn-primary">Enviar</button>
+      </form>
+    </div>
+  </div>
+</div>
+ 
+
+@if(show){
+  <div class="parrafo">
+    <div class="justify-content-center text-center">
+      <p> <strong>Hola, soy:</strong> @Nombre</p>
+      <p> <strong>Quiero contactarme con ustedes por lo siguiente:</strong> </p>
+      <p>@Mensaje</p>
+      <p> <strong>Pueden comunicarse a travez de mi correo:</strong>  @Correo</p>
+      <p> <strong>O Telefono:</strong> @Telefono</p>
+    </div>
+  </div>  
+} 
+@code {
+    private string? Nombre {get;set;}
+    private string? Correo {get;set;}
+    private string? Telefono {get;set;}
+    private string? Mensaje {get;set;}
+
+    private bool show = false;
+ 
+    public void Prueba(){
+      if(this.Nombre != null && this.Correo != null && this.Telefono != null && this.Mensaje != null){
+        this.show=true;
+      }
+      else{
+        Console.WriteLine("Rellenar Todos Los Campos");
+      }
+    }
+    
+}
